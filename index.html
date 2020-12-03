@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attendance record</title>
+    <script src="angular.min.js"></script>
+    <script src="at.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="myctrl">
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Index</th>
+            <th>stu_id</th>
+            <th>name</th>
+            <th>course</th>
+            <th>present</th>
+            <th>OPTIONS</th>
+        </tr>
+        <tr ng-repeat="student in studentlist">
+            <td>{{$index}}</td>
+            <td>{{student.id}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.course}}</td>
+            <td>{{student.present}}</td>
+            <td>
+                <a href="#" ng-click="delete()">Delete</a> 
+                <a href="#" ng-click="edit(student.id)">Edit</a>
+            </td>
+        </tr>
+    </table>
+    <h3>student Information</h3>
+    <table cellpadding="2" cellspacing="2">
+        <tr>
+            <td>ID</td>
+            <td><input type="text" ng-model="id"></td>
+        </tr>
+        <tr>
+            <td>NAME</td>
+            <td><input type="text" ng-model="name"></td>
+        </tr>
+        <tr>
+            <td>course</td>
+            <td><input type="text" ng-model="course"></td>
+        </tr>
+        <tr>
+            <td>present</td>
+            <td><input type="text" ng-model="present"></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="button" value="ADD" ng-click="add()">
+            <input type="button" value="SAVE" ng-click="save()"></td>
+        </tr>
+    </table>
+    
+</body>
+</html>
