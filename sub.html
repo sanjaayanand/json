@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <script src="product.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="myctrl">
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Index</th>
+            <th>PID</th>
+            <th>NAME</th>
+            <th>CPROGRAMING</th>
+            <th>WEBSTACKS</th>
+            <th>OPTIONS</th>
+        </tr>
+        <tr ng-repeat="product in listProducts">
+            <td>{{$index}}</td>
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.cprograming}}</td>
+            <td>{{product.webstacks}}</td>
+            <td>
+                <a href="#" ng-click="delete()">Delete</a> |
+                <a href="#" ng-click="edit(product.id)">Edit</a>
+            </td>
+        </tr>
+    </table>
+    <h3>Product Information</h3>
+    <table cellpadding="2" cellspacing="2">
+        <tr>
+            <td>ID</td>
+            <td><input type="text" ng-model="id"></td>
+        </tr>
+        <tr>
+            <td>NAME</td>
+            <td><input type="text" ng-model="name"></td>
+        </tr>
+        <tr>
+            <td>CPROGRAMING</td>
+            <td><input type="text" ng-model="cprograming"></td>
+        </tr>
+        <tr>
+            <td>WEBSTACKS</td>
+            <td><input type="text" ng-model="webstacks"></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="button" value="ADD" ng-click="add()">
+            <input type="button" value="SAVE" ng-click="save()"></td>
+        </tr>
+    </table>
+    
+</body>
+</html>
