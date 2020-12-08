@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attendance list</title>
@@ -16,12 +17,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body ng-app="MyApp">
+    <br>
+    <br>
     <div ng-controller="MyCtrl" class="table-wrapper">
-        Rows to Display:<input type="number" step="1" min="0" max="4" ng-model="rowlimit" />
+       <center> Rows to Display:<input type="number" step="1" min="0" max="4" ng-model="rowlimit" /></center>
         <br \>
         <br \>
 
-        Search:<input type="text" placeholder="Seach students" ng-model="Search" />
+       <center> Search:<input type="text" placeholder="Seach students" ng-model="Search" /></center>
         <br \>
         <br \>
         <table  class="fl-table">
