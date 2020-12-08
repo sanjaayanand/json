@@ -9,7 +9,7 @@
     <link href="st.css" rel="stylesheet">
 </head>
 <body ng-app="MyApp">
-    <div ng-controller="MyCtrl">
+    <div ng-controller="MyCtrl" class="table-wrapper">
         Rows to Display:<input type="number" step="1" min="0" max="4" ng-model="rowlimit" />
         <br \>
         <br \>
@@ -17,7 +17,7 @@
         Search:<input type="text" placeholder="Seach students" ng-model="Search" />
         <br \>
         <br \>
-        <table>
+        <table  class="fl-table">
             <tr>
                 <th>Name</th>
                 <th>DOB</th>
