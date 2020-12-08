@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <script src="stu.js"></script>
+    <link href="st.css" rel="stylesheet">
+</head>
+<body ng-app="MyApp">
+    <div ng-controller="MyCtrl">
+        Rows to Display:<input type="number" step="1" min="0" max="4" ng-model="rowlimit" />
+        <br \>
+        <br \>
+
+        Search:<input type="text" placeholder="Seach students" ng-model="Search" />
+        <br \>
+        <br \>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>attendance</th>
+            </tr>
+            <tbody>
+                <tr ng-repeat="student in students | limitTo:rowlimit |filter:Search ">
+                    <td>{{student.name | uppercase}}</td>
+                    <td>{{student.dob | date:"dd/MM/yyyy"}}</td>
+                    <td>{{student.gender | lowercase}}</td>
+                    <td>{{student.salary | number:0}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
